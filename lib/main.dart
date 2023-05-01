@@ -9,7 +9,33 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.redAccent,
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.menu,
+              color: Colors.blue,
+            ),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.notification_add_outlined,
+                color: Colors.blue,
+              ),
+            ),
+          ],
+          title: Text(
+            "El Comercio",
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+          backgroundColor: Colors.white,
+        ),
       ),
     );
   }
