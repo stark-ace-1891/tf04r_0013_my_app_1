@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          elevation: 0,
           centerTitle: true,
           leading: IconButton(
             onPressed: () {},
@@ -28,10 +29,13 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ],
-          title: Text(
-            "El Comercio",
-            style: TextStyle(
-              color: Colors.black,
+          title: SizedBox(
+            width: 180,
+            height: 40,
+            child: Image(
+              image: AssetImage(
+                "assets/images/logo.png",
+              ),
             ),
           ),
           backgroundColor: Colors.white,
