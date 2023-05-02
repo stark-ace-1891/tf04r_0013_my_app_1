@@ -42,7 +42,7 @@ class Noticia {
 }
 
 class MyApp extends StatelessWidget {
-  List<Noticia> noticias = [
+  final List<Noticia> noticias = [
     Noticia(
       titulo:
           "Esponjosas, húmedas y dulces: Guía de las 5 tortas de chocolate que debes probar en Lima",
@@ -75,7 +75,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
           leading: IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.menu,
               color: Colors.brown,
             ),
@@ -83,13 +83,13 @@ class MyApp extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.notification_add_outlined,
                 color: Colors.brown,
               ),
             ),
           ],
-          title: SizedBox(
+          title: const SizedBox(
             width: 180,
             height: 40,
             child: Image(
@@ -103,14 +103,14 @@ class MyApp extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Padding(
                 padding: EdgeInsets.all(15),
                 child: Text(
                   subtitulo,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15,
                     fontFamily: "Dancing",
                   ),
@@ -121,7 +121,7 @@ class MyApp extends StatelessWidget {
                   "assets/images/noticia.png",
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               ...noticias
@@ -132,7 +132,7 @@ class MyApp extends StatelessWidget {
                           padding: const EdgeInsets.all(12.0),
                           child: Text(
                             e.titulo,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontFamily: "Pacifico",
                               fontSize: 22,
@@ -146,13 +146,13 @@ class MyApp extends StatelessWidget {
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
                                     item,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontFamily: "Dancing",
                                     ),
                                   ),
                                 ),
                                 minLeadingWidth: 3,
-                                leading: Icon(
+                                leading: const Icon(
                                   Icons.cake,
                                   color: Colors.brown,
                                 ),
