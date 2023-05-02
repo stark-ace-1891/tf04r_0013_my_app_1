@@ -112,6 +112,7 @@ class MyApp extends StatelessWidget {
                   subtitulo,
                   style: TextStyle(
                     fontSize: 15,
+                    fontFamily: "Dancing",
                   ),
                 ),
               ),
@@ -133,6 +134,7 @@ class MyApp extends StatelessWidget {
                             e.titulo,
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
+                              fontFamily: "Pacifico",
                               fontSize: 22,
                             ),
                           ),
@@ -142,7 +144,12 @@ class MyApp extends StatelessWidget {
                               (String item) => ListTile(
                                 title: Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(item),
+                                  child: Text(
+                                    item,
+                                    style: TextStyle(
+                                      fontFamily: "Dancing",
+                                    ),
+                                  ),
                                 ),
                                 minLeadingWidth: 3,
                                 leading: Icon(
