@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     DateTime now = DateTime.now().toUtc();
     String subtitulo =
-        "${Util.getMonth(now.month)} ${now.day.toString()} at ${(now.hour).toString()}:${now.minute.toString()}";
+        "${Util.getMonth(now.month).toUpperCase()} ${now.day.toString()} a las ${(now.hour).toString()}:${now.minute.toString()}";
     print(subtitulo);
     return MaterialApp(
       home: Scaffold(
@@ -77,8 +77,14 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Text(
-              subtitulo,
+            Padding(
+              padding: EdgeInsets.all(15),
+              child: Text(
+                subtitulo,
+                style: TextStyle(
+                  fontSize: 15,
+                ),
+              ),
             ),
             const Image(
               image: AssetImage(
