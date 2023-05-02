@@ -77,7 +77,7 @@ class MyApp extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.menu,
-              color: Colors.blue,
+              color: Colors.brown,
             ),
           ),
           actions: [
@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
               onPressed: () {},
               icon: Icon(
                 Icons.notification_add_outlined,
-                color: Colors.blue,
+                color: Colors.brown,
               ),
             ),
           ],
@@ -100,43 +100,64 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
         ),
-        body: Column(
-          children: [
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: Text(
-                subtitulo,
-                style: TextStyle(
-                  fontSize: 15,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 5,
+              ),
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  subtitulo,
+                  style: TextStyle(
+                    fontSize: 15,
+                  ),
                 ),
               ),
-            ),
-            const Image(
-              image: AssetImage(
-                "assets/images/noticia.png",
+              const Image(
+                image: AssetImage(
+                  "assets/images/noticia.png",
+                ),
               ),
-            ),
-            ...noticias
-                .map(
-                  (Noticia e) => Column(
-                    children: [
-                      Text(e.titulo),
-                      ...e.detalle
-                          .map(
-                            (String item) => ListTile(
-                              title: Text(item),
-                              leading: Icon(
-                                Icons.circle,
-                                size: 12,
-                              ),
+              SizedBox(
+                height: 10,
+              ),
+              ...noticias
+                  .map(
+                    (Noticia e) => Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Text(
+                            e.titulo,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 22,
                             ),
-                          )
-                          .toList(),
-                    ],
-                  ),
-                )
-                .toList(),
-          ],
+                          ),
+                        ),
+                        ...e.detalle
+                            .map(
+                              (String item) => ListTile(
+                                title: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(item),
+                                ),
+                                minLeadingWidth: 3,
+                                leading: Icon(
+                                  Icons.cake,
+                                  color: Colors.brown,
+                                ),
+                              ),
+                            )
+                            .toList(),
+                      ],
+                    ),
+                  )
+                  .toList(),
+            ],
+          ),
         ),
       ),
     );
