@@ -35,7 +35,32 @@ class Util {
   }
 }
 
+class Noticia {
+  final String titulo;
+  final List<String> detalle;
+  Noticia({required this.titulo, required this.detalle});
+}
+
 class MyApp extends StatelessWidget {
+  List<Noticia> noticias = [
+    Noticia(
+      titulo:
+          "Esponjosas, húmedas y dulces: Guía de las 5 tortas de chocolate que debes probar en Lima",
+      detalle: [
+        "Un postre que cae bien en cualquier momento y que guarda los recuerdos de la infancia, así es la torta de chocolate.",
+        "Es por eso, que, para este tiempo, en el que el sol aún nos acompaña, pero que las noches empiezan a ser más frescas, esta torta es un imperdible. Aquí te dejamos cinco opciones que debes probar en Lima.",
+      ],
+    ),
+    Noticia(
+      titulo:
+          "¿Dónde venden la mejor torta de chocolate de Lima? Las elegidas de los lectores de Provecho",
+      detalle: [
+        "El 27 de enero de cada año se celebra el Día Internacional de la Torta de Chocolate, esta tradición nace en Estados Unidos con el nombre de 'Chocolat Cake Day'.",
+        "Para celebrar este día, le preguntamos a los lectores de Provecho cuál es la mejor torta de chocolate de Lima y estas fueron las diez más mencionadas.",
+      ],
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now().toUtc();
@@ -91,6 +116,26 @@ class MyApp extends StatelessWidget {
                 "assets/images/noticia.png",
               ),
             ),
+            ...noticias
+                .map(
+                  (Noticia e) => Column(
+                    children: [
+                      Text(e.titulo),
+                      ...e.detalle
+                          .map(
+                            (String item) => ListTile(
+                              title: Text(item),
+                              leading: Icon(
+                                Icons.circle,
+                                size: 12,
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ],
+                  ),
+                )
+                .toList(),
           ],
         ),
       ),
